@@ -1,2 +1,2 @@
 Test
-https://jayreddin.github.io/JamieAirToWater/
+https://jayreddin.github.io/JamieAirToWater/index.html
