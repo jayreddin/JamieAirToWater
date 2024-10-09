@@ -49,7 +49,6 @@ h1 {
 /* Container */
 .container {
   max-width: 90%;
-  margin: auto;
   position: relative;
 }
 
@@ -92,7 +91,7 @@ nav ul li {
 }
 
 header {
-  background-color: #333;
+  background-color: #ffffff;
   padding: 10px;
 }
 
@@ -165,13 +164,13 @@ main {
 
 .button {
   display: inline-block;
-  width: 80%;
-  margin: 15px;
+  width: 90%;
+  
   padding: 15px 30px;
   text-align: center;
   font-size: 18px;
   letter-spacing: 1px;
-  color: #000000;
+  color: #050505;
   background: transparent;
   cursor: pointer;
   transition: ease-out 0.5s;
@@ -222,74 +221,22 @@ main {
   background: #ddd;
 }
 
-/* Dark Mode Styles */
-body.dark-mode {
-  background-color: black;
-  color: grey; /* Set body text color to grey */
-}
 
-.results-box.dark-mode {
-  background: #333;
-  color: grey; /* Set text color to grey */
-  border: 2px solid #fff;
-}
 
-input.dark-mode, 
-textarea.dark-mode {
-  border: 2px solid #fff;
-  color: grey; /* Set input/textarea text color to grey */
-}
-
-input.dark-mode::placeholder, 
-textarea.dark-mode::placeholder {
-  color: #bbb; /* Placeholder color */
-}
-
-header.dark-mode {
-  background-color: #222;
-}
-
-.nav-links a.dark-mode {
-  color: grey; /* Set navigation link color to grey */
-}
-
-.dropdown-content.dark-mode {
-  background-color: #444;
-}
-
-.dropdown-content.dark-mode a {
-  color: grey; /* Set dropdown link color to grey */
-}
-
-.button.dark-mode {
-  border-color: white;
-  color: grey; /* Set button text color to grey */
-}
-
-.button.dark-mode:hover {
-  color: black; /* Change hover color for better visibility */
-  background: white;
-  box-shadow: inset 0 -100px 0 0 #fff;
-}
-
-.dark-mode-toggle {
-  margin: 20px 0;
+.full-width-button {
+  display: inline-block;
+  width: 100%;
   padding: 10px;
-  background-color: #28a745;
+  background-color: #007BFF; /* Bootstrap primary color */
   color: white;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
+  text-align: center;
 }
 
-.dark-mode-toggle:hover {
-  background-color: #218838;
+.full-width-button:hover {
+  background-color: #0056b3; /* Darker shade for hover effect */
 }
-.button-column.dark-mode {
-  border: 2px solid grey; /* Set border color to grey */
-  color: grey; /* Set text color to grey */
-}
-.button.dark-mode {
-  color: grey; /* Set button text color to grey */
-  border-color: grey; /* Set button border color to grey */
-}
+
