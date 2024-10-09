@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG Thermia</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="container">
+        <h1>LG Thermia</h1>
+        <input type="text" id="search" placeholder="Enter error code">
+        <div id="results" class="results-box"></div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const resultsBox = document.getElementById('results');
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.trim().toLowerCase(); // Normalize to lower case
+
+            fetch('/JSON/LG.json')  // Fetch data from LG.json
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const errorCodes = data["Error Codes"] || [];
+
+                    // Filter all error codes across different assemblies
+                    const combinedResults = errorCodes.flatMap(assembly => 
+                        assembly.codes.filter(item => {
+                            const codeMatch = item.errorCode.toLowerCase().includes(searchTerm);
+                            const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(searchTerm.replace(/[^\d]/g, ''));
+                            return codeMatch || numericMatch;
+                        }).map(item => ({
+                            errorCode: item.errorCode,
+                            errorMeaning: item.errorMeaning,
+                            possibleSolution: item.possibleSolution
+                        }))
+                    );
+
+                    if (combinedResults.length > 0) {
+                        const resultsText = combinedResults.map(item => 
+                            `<div class="result-container">
+                                <div class="error-code">Error Code: ${item.errorCode}</div>
+                                <div class="line"></div>
+                                <div class="Contents">Meaning: ${item.errorMeaning}</div>
+                                <div class="line"></div>
+                                <div class="Measure">Solution: ${item.possibleSolution || 'N/A'}</div>
+                            </div>`
+                        ).join(''); // No need for <br> as each result has its own container
+                        resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
+                    } else {
+                        resultsBox.innerHTML = 'No results found.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing JSON:', error);
+                    resultsBox.innerHTML = `Error loading data: ${error.message}`;
+                });
+        });
+    </script>
+</body>
+</html>
