@@ -17,6 +17,7 @@
 
     <div id="container">
         <h1>DeDietrich Strateo</h1>
+         
         <input type="text" id="search" placeholder="Enter error code">
         <div id="results" class="results-box"></div>
     </div>
@@ -28,7 +29,7 @@
             searchInput.addEventListener('input', () => {
                 const searchTerm = searchInput.value.trim().toLowerCase(); // Normalize to lower case
 
-                fetch('/JSON/PanasonicAquarea.json')
+                fetch('/JSON/DeDietrich.json')
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`HTTP error! status: ${response.status}`);
