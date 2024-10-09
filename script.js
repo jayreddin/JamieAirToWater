@@ -34,7 +34,7 @@ searchInput.addEventListener('input', () => {
             const combinedResults = [...filteredErrorCodes, ...filteredTroubleshooting];
 
             if (combinedResults.length > 0) {
-                const resultsText = combinedResults.map(item => 
+                const resultsText = combinedResults.map(item =>
                     `<div class="error-code">Error Code: ${item.errorCode}</div>
                     <div class="line"></div>
                     <div class="Contents">Meaning: ${item.errorMeaning}</div>
