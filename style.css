@@ -56,7 +56,7 @@ h1 {
 input, textarea {
   text-align: center;
   display: inline-block;
-  width: 89vw;
+  width: 89%;
   margin-bottom: 20px;
   padding: 15px 30px;
   font-size: 18px;
