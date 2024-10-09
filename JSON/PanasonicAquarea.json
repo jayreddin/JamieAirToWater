@@ -1,0 +1,212 @@
+{
+  "Error Codes": [
+    {
+      "code": "H12",
+      "description": "Inappropriate device capacities"
+    },
+    {
+      "code": "H15",
+      "description": "Fault with compressor temperature sensor"
+    },
+    {
+      "code": "H20",
+      "description": "Fault with circulation pump"
+    },
+    {
+      "code": "H23",
+      "description": "Fault with coolant sensor"
+    },
+    {
+      "code": "H27",
+      "description": "Fault with service valve"
+    },
+    {
+      "code": "H28",
+      "description": "Fault with solar sensor"
+    },
+    {
+      "code": "H31",
+      "description": "Fault with swimming pool sensor"
+    },
+    {
+      "code": "H36",
+      "description": "Fault with buffer tank sensor"
+    },
+    {
+      "code": "H38",
+      "description": "Fault due to non-matching device brands"
+    },
+    {
+      "code": "H42",
+      "description": "Low pressure protection"
+    },
+    {
+      "code": "H43",
+      "description": "Fault with the sensor for heatC 1"
+    },
+    {
+      "code": "H44",
+      "description": "Fault with the sensor for heatC 2"
+    },
+    {
+      "code": "H62",
+      "description": "Fault upstream with the flow monitor"
+    },
+    {
+      "code": "H63",
+      "description": "Fault with the low pressure sensor"
+    },
+    {
+      "code": "H64",
+      "description": "Fault with the high pressure sensor"
+    },
+    {
+      "code": "H65",
+      "description": "Fault with the water circulation during defrosting"
+    },
+    {
+      "code": "H67",
+      "description": "Fault with outdoor temperature sensor 1"
+    },
+    {
+      "code": "H68",
+      "description": "Fault with outdoor temperature sensor 2"
+    },
+    {
+      "code": "H70",
+      "description": "Fault with overload protection for indoor units E-heating element"
+    },
+    {
+      "code": "H72",
+      "description": "Fault with hot water tank temperature sensor"
+    },
+    {
+      "code": "H74",
+      "description": "Fault with PCB communication"
+    },
+    {
+      "code": "H75",
+      "description": "Low water temp. protection"
+    },
+    {
+      "code": "H76",
+      "description": "Fault with the PCB communication"
+    },
+    {
+      "code": "H90",
+      "description": "Communication fault with indoor/outdoor units"
+    },
+    {
+      "code": "H91",
+      "description": "Fault with overload protection for hot water E-heating element"
+    },
+    {
+      "code": "H95",
+      "description": "Fault with incorrect voltage IU - OU"
+    },
+    {
+      "code": "H98",
+      "description": "Fault due to high pressure protection"
+    },
+    {
+      "code": "H99",
+      "description": "Fault due to frost protection of indoor units heat exchanger"
+    },
+    {
+      "code": "F12",
+      "description": "High pressure switch in the outdoor unit triggered"
+    },
+    {
+      "code": "F14",
+      "description": "Incorrect compressor speed"
+    },
+    {
+      "code": "F15",
+      "description": "Incorrect speed of the OU fan motor"
+    },
+    {
+      "code": "F16",
+      "description": "Fault due to excessive current consumption"
+    },
+    {
+      "code": "F20",
+      "description": "Fault due to overload protection of the compressor"
+    },
+    {
+      "code": "F22",
+      "description": "Fault due to overload protection of power transistor"
+    },
+    {
+      "code": "F23",
+      "description": "Fault due to direct current peaks in the OU"
+    },
+    {
+      "code": "F24",
+      "description": "Fault due to problems in the cooling circuit"
+    },
+    {
+      "code": "F25",
+      "description": "Fault due to problems with the switching interval"
+    },
+    {
+      "code": "F27",
+      "description": "Fault with the high pressure switch in the OU"
+    },
+    {
+      "code": "F29",
+      "description": "Low hot gas superheat"
+    },
+    {
+      "code": "F30",
+      "description": "Fault with the inflow temperature sensor"
+    },
+    {
+      "code": "F32",
+      "description": "Fault with the room thermostat"
+    },
+    {
+      "code": "F36",
+      "description": "Fault with the outdoor temperature sensor"
+    },
+    {
+      "code": "F37",
+      "description": "Fault with the return flow temperature sensor"
+    },
+    {
+      "code": "F40",
+      "description": "Fault with the hot gas temp. sensor in the outdoor unit"
+    },
+    {
+      "code": "F41",
+      "description": "Error in the power factor correction"
+    },
+    {
+      "code": "F42",
+      "description": "Error with the heat exchanger sensor in the outdoor unit"
+    },
+    {
+      "code": "F43",
+      "description": "Fault with hot gas temp. sensor in the outdoor unit"
+    },
+    {
+      "code": "F45",
+      "description": "Fault with the defrost temp. sensor in the outdoor unit"
+    },
+    {
+      "code": "F46",
+      "description": "Current transformer switching off"
+    },
+    {
+      "code": "F48",
+      "description": "Error with evaporator outlet temp. sensor"
+    },
+    {
+      "code": "F49",
+      "description": "Fault with bypass outlet temp. sensor in the OU"
+    },
+    {
+      "code": "F95",
+      "description": "Fault due to HP protection cooling in the outdoor unit"
+    }
+  ]
+}

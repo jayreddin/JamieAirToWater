@@ -1,0 +1,167 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Results Box */
+.results-box {
+  border: 1px solid #000000; /* Border around the results box */
+  border-radius: 4px; /* Rounded corners */
+  padding: 15px; /* Padding inside the box */
+  background-color: #f9f9f9; /* Light background color */
+  margin-top: 20px; /* Space above the results box */
+  text-align: center;
+}
+
+.error-code {
+  font-size: 24px; /* Large font size for error code */
+  font-weight: bold; /* Bold text */
+  margin-bottom: 10px; /* Space below */
+  text-align: center;
+}
+
+.line {
+  border-top: 1px solid #000000; /* Blue line */
+  margin: 10px 0; /* Space above and below the line */
+}
+
+.meaning, .solution {
+  margin: 10px 0; /* Space above and below the text */
+  text-align: center;
+  font-weight: bold; 
+}
+
+/* Container */
+.container {
+  max-width: 90%; /* Limit the width of the container */
+  margin: auto;
+}
+
+/* Input and Textarea */
+input, textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #050505;
+  border-radius: 4px;
+  text-align: center;
+}
+
+textarea {
+  height: 400px;
+  resize: none;
+}
+
+/* Header Styles */
+header {
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+header {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Main Styles */
+main {
+  padding: 20px;
+}
+
+/* Button Styles */
+.button-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Additional Responsive Styles (Optional) */
+@media (max-width: 768px) {
+  .button {
+    width: 90%; /* Make buttons wider on smaller screens */
+  }
+}

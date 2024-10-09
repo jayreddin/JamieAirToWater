@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joule Kodiak</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="container">
+        <h1>Joule Kodiak</h1>
+        <input type="text" id="search" placeholder="Enter error code">
+        <div id="results" class="results-box"></div>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const resultsBox = document.getElementById('results');
+
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.trim().toLowerCase(); // Normalize to lower case
+
+            fetch('/JSON/KodiakJoule.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Filter error codes
+                    const errorCodes = data["Error Codes"].filter(item => {
+                        return item.errorCode.toLowerCase().includes(searchTerm) || 
+                               item.errorMeaning.toLowerCase().includes(searchTerm) || 
+                               item.possibleSolution.toLowerCase().includes(searchTerm);
+                    });
+
+                    // Filter troubleshooting
+                    const troubleshooting = data["Troubleshooting"].filter(item => {
+                        return item.errorCode.toLowerCase().includes(searchTerm) || 
+                               item.errorMeaning.toLowerCase().includes(searchTerm) || 
+                               item.possibleSolution.toLowerCase().includes(searchTerm);
+                    });
+
+                    // Combine results
+                    const combinedResults = [...errorCodes, ...troubleshooting];
+
+                    if (combinedResults.length > 0) {
+                        const resultsText = combinedResults.map(item => 
+                            `<div class="error-code">Error Code: ${item.errorCode}</div>
+                            <div class="line"></div>
+                            <div class="Contents">Meaning: ${item.errorMeaning}</div>
+                            <div class="line"></div>
+                            <div class="Measure">Solution: ${item.possibleSolution}</div>`
+                        ).join('<br>'); // Add space between different results
+                        resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
+                    } else {
+                        resultsBox.innerHTML = 'No results found.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing JSON:', error);
+                    resultsBox.innerHTML = `Error loading data: ${error.message}`;
+                });
+        });
+    </script>
+</body>
+</html>

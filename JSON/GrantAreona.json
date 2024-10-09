@@ -1,0 +1,202 @@
+{
+  "Error Codes": [
+    {
+      "code": "--",
+      "error": "Power supply",
+      "method_of_check": "Check the power supply",
+      "troubleshooting": "Confirm the power supply-"
+    },
+    {
+      "code": "A0",
+      "error": "DC voltage error",
+      "method_of_check": "Fan motor Operate without lead wire for Fan motor Check the electric continuity of Fuse by tester",
+      "troubleshooting": "If the same error code appears again, Main PCB or Pump should be replaced If other error codes appear, Fan motor should be replaced"
+    },
+    {
+      "code": "A1",
+      "error": "Discharge temperature error",
+      "method_of_check": "Sensor, Temp. Discharge Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "A2",
+      "error": "Protective action against excess Current DC current detection Unreasonable operation under/overload",
+      "method_of_check": "Check the place of installation (blockage of air inlet & outlet) Check the excess gas Ensure the installation position to avoid blockage of air inlet & outlet",
+      "troubleshooting": "If excess gas is observed, collect all refrigerant once, then recharge with prescribed mass"
+    },
+    {
+      "code": "A3",
+      "error": "CT disconnection",
+      "method_of_check": "Main PCB",
+      "troubleshooting": "Main PCB should be replaced"
+    },
+    {
+      "code": "A4",
+      "error": "Protective action against excess Current AC current detection Unreasonable operation under/overload",
+      "method_of_check": "Check the place of installation (blockage of air inlet & outlet) Check the excess gas Ensure the installation position to avoid blockage of air inlet & outlet",
+      "troubleshooting": "If excess gas is observed, collect all refrigerant once, then recharge with prescribed mass"
+    },
+    {
+      "code": "A5",
+      "error": "Abnormal revolution of compressor",
+      "method_of_check": "Check the place of installation (blockage of air inlet & outlet) Check the excess gas Ensure the installation position to avoid blockage of air inlet & outlet",
+      "troubleshooting": "If excess gas is observed, collect all refrigerant once, then recharge with prescribed mass"
+    },
+    {
+      "code": "A6",
+      "error": "Suction temperature sensor error",
+      "method_of_check": "Sensor, Temp. Suction Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "A7",
+      "error": "Defrost temperature sensor error",
+      "method_of_check": "Sensor, Temp. Defrost Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "A8",
+      "error": "Discharge temperature sensor error",
+      "method_of_check": "Sensor, Temp. Discharge Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "C1",
+      "error": "Upper fan motor error (HPID13R32 & HPID17R32)",
+      "method_of_check": "Fuse CF7 (250V T3.15A) Check the electric continuity Fuse CF7 by tester",
+      "troubleshooting": "If CF7 is blown, Fan motor and CF7 should be replaced If CF7 is not blown, check the voltage of Fan motor If the voltage is normal, Fan motor should be replaced If the voltage is abnormal, Main PCB should be replaced"
+    },
+    {
+      "code": "C2",
+      "error": "Outdoor temperature sensor error",
+      "method_of_check": "Sensor, Temp. Outdoor Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "C3",
+      "error": "Lower Fan motor error (HPID13R32 & HPID17R32)",
+      "method_of_check": "Fuse CF6 (HPID16: 250V T3.15A) Check the electric continuity of Fuse CF6 by tester",
+      "troubleshooting": "If CF6 is blown, it should be replaced"
+    },
+    {
+      "code": "C4",
+      "error": "Rise of temperature (above 110°C) of Main PCB",
+      "method_of_check": "Mis-installation Check the place of installation (blockage of air inlet & outlet) Ensure the installation position to avoid blockage of air inlet & outlet",
+      "troubleshooting": "Main PCB should be replaced"
+    },
+    {
+      "code": "C5",
+      "error": "Main PCB sensor error",
+      "method_of_check": "Sensor, Temp. Main PCB",
+      "troubleshooting": "Main PCB should be replaced"
+    },
+    {
+      "code": "C6",
+      "error": "Main PCB error",
+      "method_of_check": "Main PCB",
+      "troubleshooting": "Main PCB should be replaced"
+    },
+    {
+      "code": "C7",
+      "error": "Controller PCB serial error",
+      "method_of_check": "Mis wiring or rare contact [Main PCB - Controller PCB connecting cable]",
+      "troubleshooting": "Check the wiring connection and rare contact After correcting mis wiring, restart operation"
+    },
+    {
+      "code": "C8",
+      "error": "Main PCB error",
+      "method_of_check": "Turn off the power supply, wait for about 3 minutes, then power up again",
+      "troubleshooting": "If the same error code appears, Main PCB should be replaced"
+    },
+    {
+      "code": "E4",
+      "error": "Outgoing water temperature sensor error",
+      "method_of_check": "Sensor, Temp. Outgoing water Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "E5",
+      "error": "Return water temperature sensor error",
+      "method_of_check": "Sensor, Temp. Return water Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "FU",
+      "error": "High pressure switch is operating (HPID13R32 & HPID17R32)",
+      "method_of_check": "Outside air recirculation Check temperature difference of Outgoing/Return water (see Monitor display function) Large difference means flow rate is too low Make sure the position doesn’t block the air inlet and outlet",
+      "troubleshooting": "Clogged water circuit Remove the blockage, then restart operation"
+    },
+    {
+      "code": "P1",
+      "error": "Pump error",
+      "method_of_check": "Pump (*2) Check the voltage of Pump",
+      "troubleshooting": "If the voltage is normal, Pump should be replaced If the voltage is abnormal, Main PCB should be replaced"
+    },
+    {
+      "code": "P3",
+      "error": "High pressure switch error (HPID13R32 & HPID17R32)",
+      "method_of_check": "High pressure switch Check loose cable connections and contacts",
+      "troubleshooting": "If the same error code appears, high pressure switch should be replaced"
+    },
+    {
+      "code": "U1",
+      "error": "Compressor overheat protection relay operation (HPID13R32 & HPID17R32)",
+      "method_of_check": "Compressor overheat protection relay Check the resistance by tester",
+      "troubleshooting": "If the compressor overheat protection relay is blown, it should be replaced"
+    },
+    {
+      "code": "L0",
+      "error": "EEPROM error",
+      "method_of_check": "PCB(Controller) and PCB(EEPROM)",
+      "troubleshooting": "PCB(Controller) and PCB(EEPROM) should be replaced"
+    },
+    {
+      "code": "L1",
+      "error": "DHW temperature sensor error",
+      "method_of_check": "Sensor, temperature DHW tank Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "L2",
+      "error": "Outdoor temperature sensor error",
+      "method_of_check": "Sensor, temperature outdoor Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "L3",
+      "error": "Thermal store temperature sensor error",
+      "method_of_check": "Sensor, temperature thermal store Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "L4",
+      "error": "Mix water temperature sensor error",
+      "method_of_check": "Sensor, temperature Mix water Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "L5",
+      "error": "Humidity sensor error",
+      "method_of_check": "Sensor, Humidity Check the resistance by tester",
+      "troubleshooting": "If the sensor is faulty, it should be replaced"
+    },
+    {
+      "code": "74 0",
+      "error": "Remote controller communication error",
+      "method_of_check": "Incorrect remote controller wiring or DIP SW setting",
+      "troubleshooting": "Check loose cable connections and contacts Check DIP SW setting After having corrected the wiring and DIP SW setting, restart operation"
+    },
+    {
+      "code": "E8",
+      "error": "Remote controller communication error",
+      "method_of_check": "Incorrect remote controller wiring",
+      "troubleshooting": "Check loose cable connections and contacts After having corrected the wiring, restart operation"
+    },
+    {
+      "code": "F5",
+      "error": "Main PCB communication error",
+      "method_of_check": "Incorrect main PCB wiring",
+      "troubleshooting": "Check loose cable connections and contacts After having corrected the wiring, restart operation"
+    }
+  ]
+}

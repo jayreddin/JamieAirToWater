@@ -1,0 +1,582 @@
+{
+  "error_codes": {
+    "Alarms for Indoor units": [
+      {
+        "code": "3-ooo",
+        "origin": "Indoor",
+        "detail": "Communication Transmission Alarm (Not outdoor unit detected)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "11-ooo",
+        "origin": "Indoor",
+        "detail": "Water inlet thermistor abnormally (THMwi)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "12-ooo",
+        "origin": "Indoor",
+        "detail": "Water outlet thermistor abnormally (THMwo)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "13-ooo",
+        "origin": "Indoor",
+        "detail": "Indoor Liquid Pipe Temp Thermistor Abnormality (THMl)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "14-ooo",
+        "origin": "Indoor",
+        "detail": "Indoor Gas Pipe Temperature Thermistor Abnormality (THMg)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "15-(o)(o)(o)",
+        "origin": "Indoor",
+        "detail": "Water Circuit 2 thermistor abnormally (THMwo2)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "16-(o)(o)(o)",
+        "origin": "Indoor",
+        "detail": "Water DHW thermistor abnormally (THMdhwt)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "17-(o)(o)(o)",
+        "origin": "Indoor",
+        "detail": "Auxiliary sensor 2  thermistor abnormally (THMaux2)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "18-(o)(o)(o)",
+        "origin": "Indoor",
+        "detail": "Auxiliary sensor 1  thermistor abnormally (THMaux1)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "19-o--",
+        "origin": "Indoor",
+        "detail": "Water Plate HEX pipe thermistor abnormally (THMwohp)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "19-o-",
+        "origin": "Indoor",
+        "detail": "Suction R134a  pipe thermistor abnormally (THMs)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "23-o-",
+        "origin": "Indoor",
+        "detail": "Discharge R134a  pipe thermistor abnormally (THMd)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "25-(o)(o)(o)",
+        "origin": "Indoor",
+        "detail": "Auxiliary sensor 3  thermistor abnormally (THMaux3)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "40-ooo",
+        "origin": "Indoor",
+        "detail": "Incorrect LCD setting",
+        "main_factors": "Current LCD configuration does not allow proper operation"
+      },
+      {
+        "code": "61-(o)(o)(o)",
+        "origin": "Indoor",
+        "detail": "No Cascade Messages",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "62-(o)(o)(o)",
+        "origin": "Indoor",
+        "detail": "Central mismatch",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "63-(o)(o)(o)",
+        "origin": "Communication",
+        "detail": "Transmission error between Central and indoor communication",
+        "main_factors": "Indoor fuse meltdown, Indoor/central connection wiring (breaking, wiring error, etc.)"
+      },
+      {
+        "code": "70P70ooo",
+        "origin": "Indoor",
+        "detail": "Hydraulic alarm flow & Water Pump malfunction",
+        "main_factors": "Water flow is not detected in the hydraulic cycle or Pump defective"
+      },
+      {
+        "code": "72o--",
+        "origin": "Indoor",
+        "detail": "Thermostat Heater Alarm",
+        "main_factors": "High temperature is detected in Electric Heater"
+      },
+      {
+        "code": "73ooo",
+        "origin": "Indoor",
+        "detail": "Mixing over-temperature limit protection for Mixed circuit",
+        "main_factors": "Circuit 2 supply temperature > Target temperature + offset"
+      },
+      {
+        "code": "74P74ooo",
+        "origin": "Indoor",
+        "detail": "Unit over-temperature limit protection",
+        "main_factors": "Two > Tmax +5K"
+      },
+      {
+        "code": "75-ooo",
+        "origin": "Indoor",
+        "detail": "Freeze Protection by Cold water inlet, outlet temperature detection",
+        "main_factors": ""
+      },
+      {
+        "code": "76-ooo",
+        "origin": "Indoor",
+        "detail": "Freeze Protection Stop by indoor liquid temperature thermistor",
+        "main_factors": ""
+      },
+      {
+        "code": "77-ooo",
+        "origin": "Indoor-LCD",
+        "detail": "Receiver Communication failure",
+        "main_factors": "No Opentherm/Hlink communication for a continuous period of 10 minutes"
+      },
+      {
+        "code": "78ooo",
+        "origin": "Indoor-LCD",
+        "detail": "RF Communication failure",
+        "main_factors": "There is no communication for 1 hour with on or two RF receives which are bound to the RF-Bridge"
+      },
+      {
+        "code": "79-ooo",
+        "origin": "Indoor-outdoor",
+        "detail": "Unit Capacity setting Error",
+        "main_factors": "There is no concordance between indoor outdoor unit capacity"
+      },
+      {
+        "code": "80-ooo",
+        "origin": "Indoor",
+        "detail": "LCD H-link RCS transmission error",
+        "main_factors": "No H-link communication for a continuous period of 1 minute between Indoor and LCD User control by connection wiring (breaking, wiring error, etc.)"
+      },
+      {
+        "code": "81ooo",
+        "origin": "Indoor",
+        "detail": "Momentary Power interruption or Low voltage detected",
+        "main_factors": ""
+      },
+      {
+        "code": "100-ooo",
+        "origin": "Indoor-LCD",
+        "detail": "Compressor protection",
+        "main_factors": "Compressor failure. This alarm code appears when the following alarms 02, 07, 08, 45, 47 occur three times within 6 hours"
+      },
+      {
+        "code": "101-o-",
+        "origin": "Indoor",
+        "detail": "Activation of high pressure switch",
+        "main_factors": ""
+      },
+      {
+        "code": "102P12-o-",
+        "origin": "Indoor",
+        "detail": "Activation of protection control for excessively high pressure",
+        "main_factors": "Stop after P12 retry due to discharge pressure Pd ≥ 2.78 MPa continued for 10 seconds"
+      },
+      {
+        "code": "104P06-o-",
+        "origin": "Indoor",
+        "detail": "Activation of low control",
+        "main_factors": "Stop after P06 retry due to Ps ≤ 0.15 MPa continued for 90 seconds"
+      },
+      {
+        "code": "104P06-o-",
+        "origin": "Indoor",
+        "detail": "Activation of low control",
+        "main_factors": "Immediate stop with Ps ≤ 0.1 MPa"
+      },
+      {
+        "code": "105P11-o-",
+        "origin": "Indoor",
+        "detail": "Excessively low pressure difference",
+        "main_factors": "Stop after P11 retry due to pressure ratio ε < 1.8 continued for 3 minutes"
+      },
+      {
+        "code": "106-o-",
+        "origin": "Indoor",
+        "detail": "Excessively high discharge gas temperature",
+        "main_factors": "Td ≥ 120 ºC continued for 10 minutes, Td ≥ 140 ºC continued for 5 seconds"
+      },
+      {
+        "code": "129-o-",
+        "origin": "Indoor",
+        "detail": "Failure of discharge gas pressure sensor",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "130-o-",
+        "origin": "Indoor",
+        "detail": "Failure of suction gas pressure sensor",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "132-o-",
+        "origin": "Indoor",
+        "detail": "Transmission error between Inverter PCB and Main PCB",
+        "main_factors": "Described in inverter abnormal stop control"
+      },
+      {
+        "code": "134-o-",
+        "origin": "Indoor",
+        "detail": "Abnormality of Power Supply Phase",
+        "main_factors": "Reverse/Open Phase"
+      },
+      {
+        "code": "135-o-",
+        "origin": "Indoor",
+        "detail": "Incorrect PCB Setting",
+        "main_factors": "Wrong DSW setting in the case of Co041"
+      },
+      {
+        "code": "151-o-",
+        "origin": "Indoor",
+        "detail": "Excessively low voltage or excessively high voltage for the inverter",
+        "main_factors": "Described in inverter abnormal stop control"
+      },
+      {
+        "code": "152-o-",
+        "origin": "Indoor",
+        "detail": "Abnormal operation of the current sensor",
+        "main_factors": "Described in inverter abnormal stop control"
+      },
+      {
+        "code": "153-o-",
+        "origin": "Indoor",
+        "detail": "Activation of protection for inverter instantaneous over current",
+        "main_factors": "Described in inverter abnormal stop control"
+      },
+      {
+        "code": "154-o-",
+        "origin": "Indoor",
+        "detail": "Transistor module protection activation",
+        "main_factors": "Described in inverter abnormal stop control"
+      },
+      {
+        "code": "155-o-",
+        "origin": "Indoor",
+        "detail": "Increase in the inverter fin temperature or abnormality",
+        "main_factors": "Described in inverter abnormal stop control"
+      },
+      {
+        "code": "156-o-",
+        "origin": "Indoor",
+        "detail": "Inverter non operation",
+        "main_factors": "Described in inverter abnormal stop control"
+      },
+      {
+        "code": "157-o-",
+        "origin": "Indoor",
+        "detail": "Inverter Communication abnormality",
+        "main_factors": "Described in inverter abnormal stop control"
+      }
+    ],
+    "Alarms for YUTAKI CASCADE CONTROLLER ATW-YCC-(01/02)": [
+      {
+        "code": "03-",
+        "origin": "Communication",
+        "detail": "Lost communication with all slave YUTAKI Units",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "15-",
+        "origin": "Indoor",
+        "detail": "Water Circuit 2 thermistor abnormally (THMwo2)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "16-",
+        "origin": "Indoor",
+        "detail": "Water DHW thermistor abnormally (THMdhwt)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "17-",
+        "origin": "Indoor",
+        "detail": "Auxiliary sensor 2  thermistor abnormally (THMaux2)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "18-",
+        "origin": "Indoor",
+        "detail": "Auxiliary sensor 1  thermistor abnormally (THMaux1)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "25-",
+        "origin": "Indoor",
+        "detail": "Auxiliary sensor 3  thermistor abnormally (THMaux3)",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "40-",
+        "origin": "Indoor",
+        "detail": "Incorrect LCD setting",
+        "main_factors": "Current LCD configuration does not allow proper operation"
+      },
+      {
+        "code": "60-",
+        "origin": "Slave unit",
+        "detail": "All slave units are in alarm state or there is no communication",
+        "main_factors": "Slave unit alarm"
+      },
+      {
+        "code": "73",
+        "origin": "Indoor",
+        "detail": "Mixing over-temperature limit protection for Mixed circuit",
+        "main_factors": "Circuit 2 supply temperature > Target temperature + offset"
+      },
+      {
+        "code": "74P74",
+        "origin": "Indoor",
+        "detail": "Unit over-temperature limit protection",
+        "main_factors": "Two > Tmax +5K"
+      },
+      {
+        "code": "75-",
+        "origin": "Indoor",
+        "detail": "Freeze Protection by Cold water inlet, outlet temperature detection",
+        "main_factors": ""
+      },
+      {
+        "code": "77-",
+        "origin": "Indoor-LCD",
+        "detail": "Receiver Communication failure",
+        "main_factors": "No Opentherm/Hlink communication for a continuous period of 10 minutes"
+      },
+      {
+        "code": "78",
+        "origin": "Indoor-LCD",
+        "detail": "RF Communication failure",
+        "main_factors": "There is no communication for 1 hour with on or two RF receives which are bound to the RF-Bridge"
+      },
+      {
+        "code": "80-",
+        "origin": "Indoor",
+        "detail": "LCD H-link RCS transmission error",
+        "main_factors": "No H-link communication for a continuous period of 1 minute between Indoor and LCD User control by connection wiring (breaking, wiring error, etc.)"
+      },
+      {
+        "code": "21X-",
+        "origin": "Sub unit",
+        "detail": "Module X is in alarm state",
+        "main_factors": "Sub unit alarm"
+      }
+    ],
+    "Alarms for Outdoor units": [
+      {
+        "code": "2",
+        "origin": "Outdoor unit",
+        "detail": "Activation of protection device (high pressure cut)",
+        "main_factors": "Activation of PSH, locked motor, abnormal operation in the power supply phase"
+      },
+      {
+        "code": "3",
+        "origin": "Transmission",
+        "detail": "Abnormal transmission between outdoor and indoor units",
+        "main_factors": "Incorrect wiring. Loose terminals, Failure of PCB. Tripping of fuse. Power supply OFF"
+      },
+      {
+        "code": "4",
+        "origin": "Transmission",
+        "detail": "Abnormal transmission between inverter PCB and RASC unit PCB",
+        "main_factors": "Transmission failure between inverter PCBs. (Loose Connector, Wire Breaking, Blowout of Fuse)"
+      },
+      {
+        "code": "5",
+        "origin": "Power supply",
+        "detail": "Reception of abnormal operation code for detection of power source phase",
+        "main_factors": "Power source with abnormal wave pattern. Main power supply phase is reversely connected or one phase is not connected"
+      },
+      {
+        "code": "6",
+        "origin": "Voltage",
+        "detail": "Excessively low voltage or excessively high voltage for the inverter",
+        "main_factors": "Voltage drop in power supply. Incorrect wiring or insufficient capacity of power supply wiring"
+      },
+      {
+        "code": "7",
+        "origin": "Cycle",
+        "detail": "Decrease in discharge gas superheat",
+        "main_factors": "Excessive Refrigerant Charge, Failure of Thermistor, Incorrect Wiring, Incorrect Piping Connection, Expansion Valve Locking at Opened Position (Disconnected Connector)"
+      },
+      {
+        "code": "8",
+        "origin": "Cycle",
+        "detail": "Excessively high discharge gas temperature at the top of compressor",
+        "main_factors": "Insufficient refrigerant charge, refrigerant leakage. Expansion valve closed or clogged"
+      },
+      {
+        "code": "19",
+        "origin": "Fan motor",
+        "detail": "Activation of the protection device for the indoor fan motor",
+        "main_factors": "Failure of fan motor"
+      },
+      {
+        "code": "20",
+        "origin": "Outdoor unit sensor",
+        "detail": "Thermistor for discharge gas temperature (THM9)",
+        "main_factors": "Incorrect wiring, disconnected wiring, broken cable, short circuit"
+      },
+      {
+        "code": "21",
+        "origin": "High pressure sensor",
+        "detail": "",
+        "main_factors": ""
+      },
+      {
+        "code": "22",
+        "origin": "Thermistor for outdoor ambient temperature (THM7)",
+        "detail": "",
+        "main_factors": ""
+      },
+      {
+        "code": "24",
+        "origin": "Thermistor for evaporating temperature (THM8)",
+        "detail": "",
+        "main_factors ": ""
+      },
+      {
+        "code": "31",
+        "origin": "System",
+        "detail": "Incorrect capacity setting or combined capacity between outdoor and indoor units",
+        "main_factors": "Incorrect Capacity Code Setting, Excessive or Insufficient Indoor Unit Total Capacity Code"
+      },
+      {
+        "code": "35",
+        "origin": "System",
+        "detail": "Incorrect indoor unit number setting",
+        "main_factors": "Duplication of indoor unit number, number of indoor units over specifications"
+      },
+      {
+        "code": "36",
+        "origin": "System",
+        "detail": "Incorrect of Indoor Unit Combination",
+        "main_factors": ""
+      },
+      {
+        "code": "38",
+        "origin": "System",
+        "detail": "Abnormality of picking up circuit for protection (Outdoor unit)",
+        "main_factors": "Failure of indoor unit PCB, incorrect wiring, connection to PCB in indoor unit"
+      },
+      {
+        "code": "45",
+        "origin": "Protection device",
+        "detail": "Activation of the safety device from excessively high discharge pressure",
+        "main_factors": "Overload (obstruction of HEX, short circuit) mixture of inert gas, Excessive Refrigerant"
+      },
+      {
+        "code": "47",
+        "origin": "Protection device",
+        "detail": "Activation of the safety device from excessively low suction pressure (protection from vacuum operation)",
+        "main_factors": "Shortage or leakage of refrigerant, piping clogging, expansion valve close-locked, fan motor locked"
+      },
+      {
+        "code": "48",
+        "origin": "Protection device",
+        "detail": "Activation of overcurrent protection",
+        "main_factors": "Overload, overcurrent. Failure of Inverter PCB, heat exchanger clogged, locked compressor. EVI/EVO failure"
+      },
+      {
+        "code": "51",
+        "origin": "Inverter",
+        "detail": "Abnormal operation of the current sensor",
+        "main_factors": "Incorrect wiring of current sensor. Failure of control PCB or Inverter PCB"
+      },
+      {
+        "code": "53",
+        "origin": "Inverter",
+        "detail": "Inverter fin temperature increase",
+        "main_factors": "Inverter module (IPM, DIP-IPM) and Inverter PCB abnormality. Failure of compressor, clogging of heat exchanger"
+      },
+      {
+        "code": "54",
+        "origin": "Inverter",
+        "detail": "Abnormality of inverter fin temperature",
+        "main_factors": "Heat Exchanger Clogging. Fan Motor Failure"
+      },
+      {
+        "code": "55",
+        "origin": "Inverter",
+        "detail": "Abnormality of inverter module",
+        "main_factors": "Failure of DIP-IPM, IPM or Inverter PCB"
+      },
+      {
+        "code": "57",
+        "origin": "Outdoor",
+        "detail": "Activating the protection of the fan motor",
+        "main_factors": ""
+      },
+      {
+        "code": "5B",
+        "origin": "Outdoor fan",
+        "detail": "Activation of over current protection",
+        "main_factors": ""
+      },
+      {
+        "code": "5C",
+        "origin": "Outdoor fan",
+        "detail": "Abnormality in current detection circuit",
+        "main_factors": ""
+      },
+      {
+        "code": "EE",
+        "origin": "Compressor",
+        "detail": "Compressor protection",
+        "main_factors": "Compressor failure. This alarm code appears when the following alarms 02, 07, 08, 45, 47 occur three times within 6 hours"
+      },
+      {
+        "code": "b0",
+        "origin": "Indoor unit model setting",
+        "detail": "Incorrect setting of unit model",
+        "main_factors": "No setting of unit capacity or incorrect setting of unit capacity"
+      },
+      {
+        "code": "b1",
+        "origin": "Number setting",
+        "detail": "Incorrect setting address or refrigerant cycle",
+        "main_factors": "Over 64 indoor units setting by number or indoor unit address"
+      },
+      {
+        "code": "b5",
+        "origin": "Number setting",
+        "detail": "Incorrect setting of indoor unit number for H-LINK type",
+        "main_factors": "The number of indoor units connected to the H-LINK II of one system is 17 or higher"
+      }
+    ],
+    "Alarms for LCD": [
+      {
+        "code": "202-(o)",
+        "origin": "LCD",
+        "detail": "Wrong settings of PC-ARFH1E",
+        "main_factors": ""
+      },
+      {
+        " code": "203-(o)",
+        "origin": "LCD",
+        "detail": "Slave PC-ARFH1E stops answering to Master PC-ARFH1E",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      },
+      {
+        "code": "204-(o)",
+        "origin": "LCD",
+        "detail": "Indoor unit stops answering to Master PC-ARFH1E",
+        "main_factors": "Loose, disconnected, broken or short-circuited connector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "Error Codes": [
+
+{
+  "01": {
+    "description": "Problem in Remote Room Air sensor",
+    "reason": "Remote air temperature sensor of MainPCB(indoor) is open or short."
+  },
+  "02": {
+    "description": "Problem in Refrigerant (Inlet side) sensor",
+    "reason": "Refrigerant inlet pipe temperature sensor of indoor unit is open or short."
+  },
+  "03": {
+    "description": "Communication error between indoor unit and wired remote controller",
+    "reason": "Communication between wired remote controller and indoor unit is not possible."
+  },
+  "05": {
+    "description": "Communication error between Main PCB(Indoor) and Main PCB(Outdoor Cycle)",
+    "reason": "There is no communication between the Main PCB(Indoor) and the Main PCB(Outdoor cycle)."
+  },
+  "06": {
+    "description": "Problem in Refrigerant pipe sensor (Outlet side)",
+    "reason": "Refrigerant outlet pipe temperature sensor of indoor unit is open or short."
+  },
+  "08": {
+    "description": "Problem in Water Tank sensor",
+    "reason": "Domestic hot water tank temperature sensor of indoor unit is open or short."
+  },
+  "09": {
+    "description": "PCB Program (EEPROM) Fault",
+    "reason": "The optional EEPROM is loosely inserted in or disconnected from the Main PCB(Indoor)"
+  },
+  "13": {
+    "description": "Problem in Solar-thermal sensor",
+    "reason": "Solar pipe temperature sensor of indoor unit is open or short."
+  },
+  "14": {
+    "description": "Problem in Flow rate",
+    "reason": "Low flow detection during pump operation"
+  },
+  "15": {
+    "description": "Overheating of water pipe",
+    "reason": "The temperature of the water pipe has exceeded a certain temperature."
+  },
+  "16": {
+    "description": "Problems in sensors",
+    "reason": "An error code 17,18,19 error has occurred at the same time."
+  },
+  "17": {
+    "description": "Problem in Water-inlet sensor",
+    "reason": "Water inlet pipe temperature sensor of indoor unit is open or short."
+  },
+  "18": {
+    "description": "Problem in Water-outlet sensor",
+    "reason": "Water outlet pipe temperature sensor of indoor unit is open or short."
+  },
+  "19": {
+    "description": "Problem in Elec/Heater Water-outlet sensor",
+    "reason": "Electric backup heater outlet temperature sensor of indoor unit is open or short."
+  },
+  "20": {
+    "description": "Electric heater overheated",
+    "reason": "Fuse of electric heater is blown due to overheat."
+  },
+  "21": {
+    "description": "Inverter compressor IPM defect",
+    "reason": "DC Peak(IPM Fault) Comp is stopped to prevent the power module from being damaged by detecting the Fault Out signal of the power element."
+  },
+  "22": {
+    "description": "CT Current Error",
+    "reason": "Overcurrent flows to the outdoor unit that measures the outdoor unit current."
+  },
+  "23": {
+    "description": "DC Link Overvoltage / Undervoltage",
+    "reason": "This is when the Comp is running when the DC Link is low or high."
+  },
+  "24": {
+    "description": "High Pressure Error",
+    "reason": "This is the case when the discharge pressure of the outdoor unit compressor is excessively increased."
+  },
+  "26": {
+    "description": "No Position Error",
+    "reason": "No Position Error occurs when the initial startup of Comp does not work normally."
+  },
+  "27": {
+    "description": "PFC overcurrent",
+    "reason": "This is the case of overcurrent or CT overcurrent inside PFC.Over current is passed through PFC module."
+  },
+  "29": {
+    "description": "Comp Over Current",
+    "reason": "Input current for Inverter Compressor exceeds the limit."
+  },
+  "32": {
+    "description": "D-Pipe Temp. High",
+    "reason": "Temperature of discharge pipe is abnormally high."
+  },
+  "34": {
+    "description": "High Pressure Error",
+    "reason": "Condensing pressure is excessively High."
+  },
+  "35": {
+    "description": "Low Pressure Error",
+    "reason": "Evaporating pressure is excessively low."
+  },
+  "40": {
+    "description": "Inv Comp CT Sensor Error",
+    "reason": "Comp control is not possible due to CT sensor error in Inv Driver "
+  },
+  "41": {
+    "description": "Inv. D-Pipe Temp sensor Error(Open/Short)",
+    "reason": "Discharge pipe temperature sensor of outdoor unit is open or short."
+  },
+  "43": {
+    "description": "High Pressure Sensor(Open/Short)",
+    "reason": "Comp cannot be controlled due to high pressure sensor error"
+  },
+  "44": {
+    "description": "Outdoor air Temperature sensor Error(Open/Short)",
+    "reason": "Outdoor air temperature sensor is open or short."
+  },
+  "45": {
+    "description": "Condenser Middle Pipe Temperature Error(Open/Short)",
+    "reason": "Cond. Middle pipe temperature sensor is open or short."
+  },
+  "46": {
+    "description": "Compressor Suction Pipe Temperature Error(Open/Short)",
+    "reason": "Suction pipe temperature sensor is open or short."
+  },
+  "48": {
+    "description": "Condenser Out Pipe Temperature Error(Open/Short)",
+    "reason": "Condenser Out Pipe thermistor isn't inserted or is inserted incorrectly"
+  },
+  "52": {
+    "description": "Inv PCB(Outdoor) -Main PCB(Outdoor Cycle) Communication Error",
+    "reason": "Communication between Inv PCB(Outdoor) -Main PCB(Outdoor Cycle) is not available"
+  },
+  "53": {
+    "description": "Main PCB(Indoor) - Main PCB(Outdoor) Communication Error",
+    "reason": "It is failed to receive the signal from IDU."
+  },
+  "54": {
+    "description": "Open and Reverse Phase Error",
+    "reason": "Wiring fault is occurred. – reverse phase (only 3-phase model)"
+  },
+  "57": {
+    "description": "Main PCB(Indoor) → Inv PCB(Outdoor) Communication Error",
+    "reason": "Main PCB (Outdoor Cycle) → Inv PCB (Outdoor) communication is defective"
+  },
+  "60": {
+    "description": "Outdoor EEPROM error",
+    "reason": "EEPROM is loose or missing, or it is burnt out."
+  },
+  "61": {
+    "description": "High Pressure Error",
+    "reason": "Condensation pressure is too high."
+  },
+  "62": {
+    "description": "Heatsink Error(High)",
+    "reason": "Temperature of heatsink or element is abnormally high."
+  },
+  "65": {
+    "description": "Problem in Heatsink Temperature sensor",
+    "reason": "This occurs when the temperature cannot be sensed above the heat sink sensor or the PSCM or PFCM internal sensor."
+  },
+  "67": {
+    "description": "Fan Lock Error",
+    "reason": "Outdoor BLDC Fan lock"
+  },
+  "114": {
+    "description": "Injection In TH Error (Open/Short)",
+    "reason": "Vapor injection inlet pipe temperature sensor of outdoor unit is open or short."
+  },
+  "115": {
+    "description": "Injection Out TH Error (Open/Short)",
+    "reason": "Vapor injection outlet pipe temperature sensor of outdoor unit is open or short."
+  },
+  "231": {
+    "description": "Problem in Water Pressure Sensor",
+    "reason": "Water Pressure Sensor of indoor unit is damaged."
+  },
+  "232": {
+    "description": "Problem in Flow Sensor",
+    "reason": "Flow Sensor of indoor unit is damaged."
+  } 
+  ]
+  
+}
