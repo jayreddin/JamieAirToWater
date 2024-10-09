@@ -55,12 +55,14 @@
 
                     if (combinedResults.length > 0) {
                         const resultsText = combinedResults.map(item => 
-                            `<div class="error-code">Error Code: ${item.errorCode}</div>
-                            <div class="line"></div>
-                            <div class="Contents">Meaning: ${item.errorMeaning}</div>
-                            <div class="line"></div>
-                            <div class="Measure">Solution: ${item.possibleSolution}</div>`
-                        ).join('<br>'); // Add space between different results
+                            `<div class="result-container">
+                                <div class="error-code">Error Code: ${item.errorCode}</div>
+                                <div class="line"></div>
+                                <div class="Contents">Meaning: ${item.errorMeaning}</div>
+                                <div class="line"></div>
+                                <div class="Measure">Solution: ${item.possibleSolution}</div>
+                            </div>`
+                        ).join(''); // No need for extra <br> as each result has its own container
                         resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
                     } else {
                         resultsBox.innerHTML = 'No results found.';
