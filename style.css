@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  
+  margin: 20px;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -166,8 +166,8 @@ main {
 
 .button {
   display: inline-block;
-  width: auto;
-  
+  width: 90%;
+  outline-offset: 5px;
   padding: 15px 30px;
   text-align: center;
   font-size: 18px;
@@ -193,7 +193,7 @@ main {
 /* Additional Responsive Styles (Optional) */
 @media (max-width: 768px) {
   .button {
-    width: 80vw;
+    width: 90%;
   }
 }
 
