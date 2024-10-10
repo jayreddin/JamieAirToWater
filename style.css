@@ -40,11 +40,10 @@ h1 {
   margin: 10px 0;
 }
 
-.meaning,
-.solution {
+.meaning, .solution {
   margin: 10px 0;
   text-align: center;
-  font-weight: bold;
+  font-weight: bold; 
 }
 
 /* Container */
@@ -54,8 +53,7 @@ h1 {
 }
 
 /* Input and Textarea */
-input,
-textarea {
+input, textarea {
   text-align: center;
   display: inline-block;
   width: 89%;
@@ -137,7 +135,7 @@ nav {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
@@ -167,7 +165,7 @@ main {
 .button {
   display: inline-block;
   width: 90%;
-  outline-offset: 5px;
+  
   padding: 15px 30px;
   text-align: center;
   font-size: 18px;
@@ -222,4 +220,3 @@ main {
   height: 1px;
   background: #ddd;
 }
-
