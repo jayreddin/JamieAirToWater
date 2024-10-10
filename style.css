@@ -15,9 +15,10 @@ h1 {
   text-align: center;
   position: relative;
   display: inline-block;
-  width: 89%;
+  width: 100%;
+  max-width: 600px;
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 1px;
   color: #000000;
   background: transparent;
@@ -29,7 +30,7 @@ h1 {
 }
 
 .error-code {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
@@ -48,18 +49,20 @@ h1 {
 
 /* Container */
 .container {
-  max-width: 90%;
-  position: relative;
+  max-width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 /* Input and Textarea */
 input, textarea {
   text-align: center;
   display: inline-block;
-  width: 89%;
+  width: 100%;
+  max-width: 600px;
   margin-bottom: 20px;
   padding: 15px 30px;
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 1px;
   color: #000000;
   background: transparent;
@@ -104,7 +107,7 @@ nav {
 /* Logo Styles */
 .logo {
   color: white;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -164,11 +167,11 @@ main {
 
 .button {
   display: inline-block;
-  width: 90%;
-  
+  width: 100%;
+  max-width: 600px;
   padding: 15px 30px;
   text-align: center;
-  font-size: 18px;
+  font-size: 1rem;
   letter-spacing: 1px;
   color: #050505;
   background: transparent;
@@ -188,16 +191,15 @@ main {
   transform: scale(0.9);
 }
 
-/* Additional Responsive Styles (Optional) */
+/* Additional Responsive Styles */
 @media (max-width: 768px) {
   .button {
-    width: 90%;
+    width: 100%;
   }
 }
 
 #container {
-  max-width: 600px;
-  margin: 20px auto;
+  max-width: 100%;
   padding: 20px;
   background: white;
   border-radius: 8px;
