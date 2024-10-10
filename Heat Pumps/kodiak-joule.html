@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joule Kodiak</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="../style.css">
     <style>
         /* Add this CSS to hide the results box by default */
         .results-box {
@@ -17,7 +17,7 @@
 </head>
 <body>
     <header>
-        <a href="/index.html" class="button">Home</a>
+        <a href="../index.html" class="button">Home</a>
     </header>
 
     <div id="container">
@@ -33,7 +33,7 @@
         searchInput.addEventListener('input', () => {
             const searchTerm = searchInput.value.trim().toLowerCase(); // Normalize to lower case
 
-            fetch('/JSON/KodiakJoule.json')
+            fetch('../JSON/KodiakJoule.json')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
