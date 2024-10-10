@@ -5,19 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joule Kodiak</title>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Add this CSS to hide the results box by default */
+        .results-box {
+            display: none; /* Hide results box */
+        }
+        .results-box.visible {
+            display: block; /* Show results box when visible class is added */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
-            </ul>
-        </nav>
+        <a href="/index.html" class="button">Home</a>
     </header>
 
     <div id="container">
-        <h1>Joule Kodiak</h1>
-         <button class="dark-mode-toggle" id="darkModeToggle">Toggle Dark Mode</button>
+        <h1>Joule Kodiak</h1><br>
         <input type="text" id="search" placeholder="Enter error code">
         <div id="results" class="results-box"></div>
     </div>
@@ -65,13 +69,16 @@
                             </div>`
                         ).join(''); // No need for extra <br> as each result has its own container
                         resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
+                        resultsBox.classList.add('visible'); // Show results box
                     } else {
                         resultsBox.innerHTML = 'No results found.';
+                        resultsBox.classList.add('visible'); // Show results box even if no results
                     }
                 })
                 .catch(error => {
                     console.error('Error fetching or parsing JSON:', error);
                     resultsBox.innerHTML = `Error loading data: ${error.message}`;
+                    resultsBox.classList.add('visible'); // Show error message
                 });
         });
     </script>

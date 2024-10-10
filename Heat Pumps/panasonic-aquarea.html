@@ -5,79 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panasonic Aquarea</title>
     <link rel="stylesheet" href="/style.css">
+    <style>
+        /* Add this CSS to hide the results box by default */
+        .results-box {
+            display: none; /* Hide results box */
+        }
+        .results-box.visible {
+            display: block; /* Show results box when visible class is added */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/index.html">Home</a></li>
-            </ul>
-        </nav>
+        <a href="/index.html" class="button">Home</a>
     </header>
 
     <div id="container">
-        <h1>Panasonic Aquarea</h1
-                                
+        <h1>Panasonic Aquarea</h1><br>
         <input type="text" id="search" placeholder="Enter error code">
         <div id="results" class="results-box"></div>
     </div>
 
     <script>
-          const searchInput = document.getElementById('search');
-            const resultsBox = document.getElementById('results');
+        const searchInput = document.getElementById('search');
+        const resultsBox = document.getElementById('results');
 
-            searchInput.addEventListener('input', () => {
-                const searchTerm = searchInput.value.trim().toLowerCase(); // Normalize to lower case
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.trim().toLowerCase(); // Normalize to lower case
 
-                fetch('/JSON/PanasonicAquarea.json')
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        // Check if the expected keys exist
-                        const errorCodes = data["Error Codes"] || [];
-                        const troubleshooting = data["Troubleshooting"] || [];
+            fetch('/JSON/PanasonicAquarea.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Check if the expected keys exist
+                    const errorCodes = data["Error Codes"] || [];
+                    const troubleshooting = data["Troubleshooting"] || [];
 
-                        // Filter error codes with both full code and numeric parts
-                        const filteredErrorCodes = errorCodes.filter(item => {
-                            const codeMatch = item.errorCode.toLowerCase().includes(searchTerm);
-                            const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(searchTerm.replace(/[^\d]/g, ''));
-                            return codeMatch || numericMatch;
-                        });
-
-                        // Filter troubleshooting
-                        const filteredTroubleshooting = troubleshooting.filter(item => {
-                            const codeMatch = item.errorCode.toLowerCase().includes(searchTerm);
-                            const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(searchTerm.replace(/[^\d]/g, ''));
-                            return codeMatch || numericMatch;
-                        });
-
-                        // Combine results
-                        const combinedResults = [...filteredErrorCodes, ...filteredTroubleshooting];
-
-                        if (combinedResults.length > 0) {
-                            const resultsText = combinedResults.map(item => 
-                                `<div class="result-container">
-                                    <div class="error-code">Error Code: ${item.errorCode}</div>
-                                    <div class="line"></div>
-                                    <div class="Contents">Meaning: ${item.errorMeaning}</div>
-                                    <div class="line"></div>
-                                    <div class="Measure">Solution: ${item.possibleSolution || 'N/A'}</div>
-                                </div>`
-                            ).join(''); // No need for <br> as each result has its own container
-                            resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
-                        } else {
-                            resultsBox.innerHTML = 'No results found.';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching or parsing JSON:', error);
-                        resultsBox.innerHTML = `Error loading data: ${error.message}`;
+                    // Filter error codes with both full code and numeric parts
+                    const filteredErrorCodes = errorCodes.filter(item => {
+                        const codeMatch = item.errorCode.toLowerCase().includes(searchTerm);
+                        const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(searchTerm.replace(/[^\d]/g, ''));
+                        return codeMatch || numericMatch;
                     });
-            });
+
+                    // Filter troubleshooting
+                    const filteredTroubleshooting = troubleshooting.filter(item => {
+                        const codeMatch = item.errorCode.toLowerCase().includes(searchTerm);
+                        const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(searchTerm.replace(/[^\d]/g, ''));
+                        return codeMatch || numericMatch;
+                    });
+
+                    // Combine results
+                    const combinedResults = [...filteredErrorCodes, ...filteredTroubleshooting];
+
+                    if (combinedResults.length > 0) {
+                        const resultsText = combinedResults.map(item => 
+                            `<div class="result-container">
+                                <div class="error-code">Error Code: ${item.errorCode}</div>
+                                <div class="line"></div>
+                                <div class="Contents">Meaning: ${item.errorMeaning}</div>
+                                <div class="line"></div>
+                                <div class="Measure">Solution: ${item.possibleSolution || 'N/A'}</div>
+                            </div>`
+                        ).join(''); // No need for <br> as each result has its own container
+                        resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
+                        resultsBox.classList.add('visible'); // Show results box
+                    } else {
+                        resultsBox.innerHTML = 'No results found.';
+                        resultsBox.classList.add('visible'); // Show results box even if no results
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching or parsing JSON:', error);
+                    resultsBox.innerHTML = `Error loading data: ${error.message}`;
+                    resultsBox.classList.add('visible'); // Show error message
+                });
+        });
     </script>
 </body>
 </html>
