@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON Search</title>
-    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         /* Add this CSS to hide the results box by default */
         .results-box {
@@ -15,14 +15,16 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-200">
     
-    <div id="container">
-        <h1>Joule Victorum</h1><br>
-        <a href="../index.html" class="button">Home</a> 
-        <br> <br>
-        <input type="number" id="search" placeholder="Enter error code">
-        <div id="results" class="results-box"></div>
+    <div id="container" class="max-w-4xl mx-auto p-6">
+        <h1 class="text-4xl text-center mb-4">Joule Victorum</h1>
+        <div class="flex justify-center mb-4">
+            <a href="../index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-105">Home</a>
+        </div>
+        <br> 
+        <input type="number" id="search" placeholder="Enter error code" class="w-full p-3 mb-4 border border-gray-600 bg-gray-700 text-gray-200 rounded focus:outline-none focus:ring focus:ring-gray-500">
+        <div id="results" class="results-box bg-gray-800 border border-gray-700 rounded-lg p-4 mt-4"></div>
     </div>
 
     <script>
@@ -63,14 +65,14 @@
 
                     if (combinedResults.length > 0) {
                         const resultsText = combinedResults.map(item => 
-                            `<div class="result-container">
-                                <div class="error-code">Error Code: ${item.errorCode}</div>
-                                <div class="line"></div>
+                            `<div class="result-container mb-4 p-4 bg-gray-700 rounded-lg">
+                                <div class="error-code font-bold">Error Code: <span class="text-yellow-300">${item.errorCode}</span></div>
+                                <div class="line my-2 border-b border-gray-600"></div>
                                 <div class="Contents">Meaning: ${item.errorMeaning}</div>
-                                <div class="line"></div>
+                                <div class="line my-2 border-b border-gray-600"></div>
                                 <div class="Measure">Solution: ${item.possibleSolution || 'N/A'}</div>
                             </div>`
-                        ).join(''); // No need for <br> as each result has its own container
+                        ).join(''); // No need for extra <br> as each result has its own container
                         resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
                         resultsBox.classList.add('visible'); // Show results box
                     } else {
