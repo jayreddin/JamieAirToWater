@@ -6,12 +6,14 @@
    <title>DeDietrich</title>
    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
    <style>
-       /* Add this CSS to hide the results box by default */
        .results-box {
            display: none; /* Hide results box */
        }
        .results-box.visible {
            display: block; /* Show results box when visible class is added */
+       }
+       #codeText {
+           display: none; /* Hide code text initially */
        }
    </style>
 </head>
@@ -19,10 +21,20 @@
    
    <div id="container" class="max-w-4xl mx-auto p-6">
        <h1 class="text-4xl text-center mb-4">DeDietrich Strateo</h1>
-       
-       <!-- Center the Home button -->
-       <div class="flex justify-center mb-4">
-           <a href="../index.html" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out transform hover:scale-105">Home</a>
+
+       <!-- Center the buttons -->
+       <div class="space-y-4 mb-4">
+           <a href="../index.html" id="homeButton" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out text-center transform hover:scale-105">
+               Home
+           </a>
+           <button id="codeButton" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out text-center transform hover:scale-105">
+               Code
+           </button>
+       </div>
+
+       <!-- Hidden code text that will appear after button click -->
+       <div id="codeText" class="text-center text-yellow-300 text-xl mb-4">
+           0012
        </div>
 
        <input type="text" id="search" placeholder="Enter error code" class="w-full p-3 mb-4 border border-gray-600 bg-gray-700 text-gray-200 rounded focus:outline-none focus:ring focus:ring-gray-500">
@@ -32,6 +44,14 @@
    <script>
        const searchInput = document.getElementById('search');
        const resultsBox = document.getElementById('results');
+       const codeButton = document.getElementById('codeButton');
+       const codeText = document.getElementById('codeText');
+
+       // Show code text when the "Code" button is clicked and hide the button
+       codeButton.addEventListener('click', () => {
+           codeText.style.display = 'block'; // Reveal code text
+           codeButton.style.display = 'none'; // Hide the button
+       });
 
        searchInput.addEventListener('input', () => {
            const searchTerm = searchInput.value.trim().toLowerCase(); // Normalize to lower case
@@ -44,25 +64,21 @@
                    return response.json();
                })
                .then(data => {
-                   // Check if the expected keys exist
                    const errorCodes = data["Error Codes"] || [];
                    const troubleshooting = data["Troubleshooting"] || [];
 
-                   // Filter error codes with both full code and numeric parts
                    const filteredErrorCodes = errorCodes.filter(item => {
                        const codeMatch = item.errorCode.toLowerCase().includes(searchTerm);
                        const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(searchTerm.replace(/[^\d]/g, ''));
                        return codeMatch || numericMatch;
                    });
 
-                   // Filter troubleshooting
                    const filteredTroubleshooting = troubleshooting.filter(item => {
                        const codeMatch = item.errorCode.toLowerCase().includes(searchTerm);
                        const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(searchTerm.replace(/[^\d]/g, ''));
                        return codeMatch || numericMatch;
                    });
 
-                   // Combine results
                    const combinedResults = [...filteredErrorCodes, ...filteredTroubleshooting];
 
                    if (combinedResults.length > 0) {
@@ -74,18 +90,18 @@
                                <div class="line my-2 border-b border-gray-600"></div>
                                <div class="Measure">Solution: ${item.possibleSolution || 'N/A'}</div>
                            </div>`
-                       ).join(''); // No need for <br> as each result has its own container
-                       resultsBox.innerHTML = resultsText; // Use innerHTML to render formatted text
-                       resultsBox.classList.add('visible'); // Show results box
+                       ).join('');
+                       resultsBox.innerHTML = resultsText;
+                       resultsBox.classList.add('visible');
                    } else {
                        resultsBox.innerHTML = 'No results found.';
-                       resultsBox.classList.add('visible'); // Show results box even if no results
+                       resultsBox.classList.add('visible');
                    }
                })
                .catch(error => {
                    console.error('Error fetching or parsing JSON:', error);
                    resultsBox.innerHTML = `Error loading data: ${error.message}`;
-                   resultsBox.classList.add('visible'); // Show error message
+                   resultsBox.classList.add('visible');
                });
        });
    </script>
