@@ -70,17 +70,18 @@
         /* Styles matching victorumjoule.html */
         body {
             background-color: #111827; /* Dark background */
-            color: #fff; /* White text */
+            /* White text */
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .container {
             max-width: 800px; /* Adjust as needed */
             margin: 0 auto;
             padding: 2rem;
+            
         }
         h1 {
             text-align: center;
-            color: #fff; /* White text */
+            /* White text */
         }
         label {
             display: block;
@@ -90,26 +91,14 @@
         input[type="text"], 
         select {
             width: 100%;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
             background-color: #212529; /* Dark input background */
-            color: #fff; /* White text */
+             /* White text */
         }
-        #search-button {
-            background-color: #0ea5e9; /* Blue button */
-            color: #fff;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        #search-button:hover {
-            background-color: #0c7dd1; /* Darker blue on hover */
-        }
+        
         #results {
             background-color: #1f2937; /* Dark gray results background */
             padding: 2rem;
@@ -118,7 +107,7 @@
         }
         .result-container {
             background-color: #212529; /* Dark input background */
-            color: #fff; /* White text */
+            /* White text */
             padding: 1.5rem;
             border-radius: 8px;
             margin-bottom: 1rem;
@@ -137,15 +126,20 @@
 </head>
 
 <body>
-  <div class="container mx-auto p-4">
-    <div class="mb-4">
-      <label for="error-input" class="block text-gray-700 text-sm font-bold mb-2">Error:</label>
-      <input type="text" id="error-input" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your error here">
+  <div class="container" class="max-w-4xl mx-auto">
+      <div class="space-y-4 mb-4">
+      <a href="../index.html" id="homeButton" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out text-center transform hover:scale-105">
+             Home
+         </a>
+    <div class="space-y-4 mt-4">
+      <label for="error-input" class="block text-gray-700 text-sm font-bold mb-2"></label>
+      <input type="text" id="error-input" class="border rounded w-full py-2 px-6 text-white font-bold text-center block" placeholder="Enter your error here">
     </div>
 
     <div class="mb-4">
-      <label for="brand-select" class="block text-gray-700 text-sm font-bold mb-2">Brand:</label>
-      <select id="brand-select" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        
+      <label for="brand-select" class="block text-white text-sm text-center font-bold mb-2"></label>
+      <select id="brand-select" class="shadow appearance-none border rounded w-full py-2 px-3 text-white leading-tight text-center focus:outline-none focus:shadow-outline">
         <option value="">Select a brand</option>
         <option value="De Dietrich">De Dietrich</option>
         <option value="Kodiak Joule">Kodiak Joule</option>
@@ -158,8 +152,8 @@
       </select>
     </div>
 
-    <div class="flex justify-center mb-4">
-      <button id="search-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full sm:w-auto">Search</button>
+    <div class="space-y-4 mt-4">
+      <button id="search-button" class="block bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out  transform hover:scale-105 w-full">Search</button>
     </div>
 
     <div id="results" class="results-box mt-4"></div>
