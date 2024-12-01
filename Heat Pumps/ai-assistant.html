@@ -166,72 +166,83 @@
   </div>
 
   <script>
-    const errorInput = document.getElementById('error-input');
-    const brandSelect = document.getElementById('brand-select');
-    const searchButton = document.getElementById('search-button');
-    const resultsDiv = document.getElementById('results');
+      const searchInput = document.getElementById('error-input'); // Corrected to 'error-input'
+      const brandSelect = document.getElementById('brand-select');
+      const searchButton = document.getElementById('search-button');
+      const resultsBox = document.getElementById('results');
 
-    searchButton.addEventListener('click', () => {
-      const error = errorInput.value.trim();
-      const brand = brandSelect.value;
+      searchButton.addEventListener('click', () => { // Changed to listen for button click
+          const error = searchInput.value.trim();
+          const brand = brandSelect.value;
 
-      if (error && brand) {
-        const fileNameMapping = {
-          "De Dietrich": "DeDietrich.json",
-          "Kodiak Joule": "KodiakJoule.json",
-          "Victorum Joule": "VictorumJoule.json",
-          "Grant Areona": "GrantAreona.json",
-          "LG Thermia": "LgThermia.json",
-          "Hitachi Yutaki": "HitachiYutaki.json",
-          "Panasonic Aquarea": "PanasonicAquarea.json",
-          "Viessman Vitocal": "ViessmanVitocal.json",
-        };
+          if (brand && error) { // Ensure both brand and error are selected
+              const fileNameMapping = {
+                  "De Dietrich": "DeDietrich.json",
+                  "Kodiak Joule": "KodiakJoule.json",
+                  "Victorum Joule": "VictorumJoule.json",
+                  "Grant Areona": "GrantAreona.json",
+                  "LG Thermia": "LgThermia.json",
+                  "Hitachi Yutaki": "HitachiYutaki.json",
+                  "Panasonic Aquarea": "PanasonicAquarea.json",
+                  "Viessman Vitocal": "ViessmanVitocal.json",
+              };
 
-        const fileName = fileNameMapping[brand];
+              const fileName = fileNameMapping[brand];
 
-        if (fileName) {
-          fetch(`./JSON/${fileName}`)
-            .then(response => {
-              if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+              if (fileName) {
+                  fetch(`../JSON/${fileName}`)
+                      .then(response => {
+                          if (!response.ok) {
+                              throw new Error(`HTTP error! status: ${response.status}`);
+                          }
+                          return response.json();
+                      })
+                      .then(data => {
+                          const errorCodes = data["Error Codes"] || [];
+                          const troubleshooting = data["Troubleshooting"] || [];
+
+                          const filteredErrorCodes = errorCodes.filter(item => {
+                              const codeMatch = item.errorCode.toLowerCase().includes(error.toLowerCase());
+                              const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(error.replace(/[^\d]/g, ''));
+                              return codeMatch || numericMatch;
+                          });
+
+                          const filteredTroubleshooting = troubleshooting.filter(item => {
+                              const codeMatch = item.errorCode.toLowerCase().includes(error.toLowerCase());
+                              const numericMatch = item.errorCode.replace(/[^\d]/g, '').includes(error.replace(/[^\d]/g, ''));
+                              return codeMatch || numericMatch;
+                          });
+
+                          const combinedResults = [...filteredErrorCodes, ...filteredTroubleshooting];
+
+                          if (combinedResults.length > 0) {
+                              const resultsText = combinedResults.map(item => 
+                                  `<div class="result-container mb-4 p-4 bg-gray-700 rounded-lg">
+                                      <div class="error-code font-bold">Error Code: <span class="text-yellow-300">${item.errorCode}</span></div>
+                                      <div class="line my-2 border-b border-gray-600"></div>
+                                      <div class="Contents">Meaning: ${item.errorMeaning}</div>
+                                      <div class="line my-2 border-b border-gray-600"></div>
+                                      <div class="Measure">Solution: ${item.possibleSolution || 'N/A'}</div>
+                                  </div>`
+                              ).join('');
+                              resultsBox.innerHTML = resultsText;
+                              resultsBox.classList.add('visible');
+                          } else {
+                              resultsBox.innerHTML = 'No results found.';
+                              resultsBox.classList.add('visible');
+                          }
+                      })
+                      .catch(error => {
+                          console.error('Error fetching or parsing JSON:', error);
+                          resultsBox.innerHTML = `Error loading data: ${error.message}`;
+                          resultsBox.classList.add('visible');
+                      });
               }
-              return response.json();
-            })
-            .then(data => {
-              // Find the error code in the data
-              const errorData = data.find(item => item.error === error);
-
-              // Display the results
-              if (errorData) { // Error code found
-                resultsDiv.innerHTML = `
-                  <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col my-2 result-container">
-                    <div class="error-code font-bold">Error Code: <span class="text-yellow-300">${errorData.error}</span></div>
-                    <div class="line my-2 border-b border-gray-600"></div>
-                    <div class="Contents">Meaning: ${errorData.meaning}</div>
-                    <div class="line my-2 border-b border-gray-600"></div>
-                    <div class="Measure">Solution: ${errorData.solution}</div>
-                  </div>
-                `;
-                resultsDiv.classList.add('visible');
-              } else { // Error code not found
-                resultsDiv.innerHTML = '<p class="text-center">No results found for this error.</p>';
-                resultsDiv.classList.add('visible');
-              }
-            })
-            .catch(error => {
-              console.error('Error fetching data:', error);
-              resultsDiv.innerHTML = `<p class="text-center">An error occurred while searching. Please try again later.</p>`;
-              resultsDiv.classList.add('visible');
-            });
-        } else {
-          resultsDiv.innerHTML = '<p class="text-center">No JSON file found for this brand.</p>';
-          resultsDiv.classList.add('visible');
-        }
-      } else {
-        resultsDiv.innerHTML = '<p class="text-center">Please enter an error and select a brand.</p>';
-        resultsDiv.classList.add('visible');
-      }
-    });
+          } else {
+              resultsBox.innerHTML = 'Please enter an error code and select a brand.';
+              resultsBox.classList.add('visible');
+          }
+      });
   </script>
 </body>
 
