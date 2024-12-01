@@ -125,12 +125,14 @@
     </style>
 </head>
 
-<body>
-  <div class="container" class="max-w-4xl mx-auto">
+    <body class="bg-gray-900 text-gray-200">
+
+        <div id="container" class="max-w-4xl mx-auto p-6">
+            <h1 class="text-4xl text-center mb-4">Ai Assistant</h1>
+    
+    <div class="container" class="max-w-4xl mx-auto">
       <div class="space-y-4 mb-4">
-      <a href="../index.html" id="homeButton" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out text-center transform hover:scale-105">
-             Home
-         </a>
+      <a href="../index.html" id="homeButton" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded transition duration-300 ease-in-out text-center transform hover:scale-105"> Home </a>
     <div class="space-y-4 mt-4">
       <label for="error-input" class="block text-gray-700 text-sm font-bold mb-2"></label>
       <input type="text" id="error-input" class="border rounded w-full py-2 px-6 text-white font-bold text-center block" placeholder="Enter your error here">
@@ -157,7 +159,25 @@
     </div>
 
     <div id="results" class="results-box mt-4"></div>
-          <iframe src="https://chat.fastmind.ai/j979jfevxbf7gdk71pkcy2jzsd75nk4d" style="width: 100%; height: 100%; min-height: 700px;"></iframe>
+         <!-- <iframe src="https://chat.fastmind.ai/j979jfevxbf7gdk71pkcy2jzsd75nk4d" style="width: 100%; height: 100%; min-height: 700px;"></iframe> -->
+          <script src="https://www.chatbees.ai/embed.js" aid="PV8Z750N" colname="Jamie" logoUrl="https://i.imgur.com/R04NL4l.jpeg" brandName="Jamie" greetingMessage="Whats the Error Code and Brand?" thinkingHint="Watching Paint Dry.." messagePlaceholder="Type your message here"> class="text-sm/6"</script>
+
+          <script>
+          !function(w, d, s, ...args){
+            var div = d.createElement('div');
+            div.id = 'aichatbot';
+            d.body.appendChild(div);
+            w.chatbotConfig = args;
+            var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s);
+            j.defer = true;
+            j.type = 'module';
+            j.src = 'https://aichatbot.sendbird.com/index.js';
+            f.parentNode.insertBefore(j, f);
+          }(window, document, 'script', 'B6E678F9-7E6D-44C6-8BBF-B4B4B57F5464', 'KbGsqq6MHs26-AEFFeTBd', {
+            apiHost: 'https://api-cf-eu-1.sendbird.com',
+          });
+          </script>
   </div>
 
   <script>
